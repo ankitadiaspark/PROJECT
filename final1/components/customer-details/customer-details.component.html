@@ -1,0 +1,91 @@
+<div>
+<mat-toolbar >
+    <span>{{form.controls['cId'].value?"Modify Customer":"New Customer"}}</span>
+        <span class="fill-remaining-space"></span>
+        <button class="btn-dialog-close" mat-stroked-button (click)="onClose()" ><mat-icon>clear</mat-icon></button>
+      </mat-toolbar>
+<form [formGroup]="form" class="normal-form"  (submit)="onSubmit()">
+    <mat-grid-list cols="2" rowHeight="350px">
+   
+      <mat-grid-tile>
+        <div class="controles-container">
+             <!-- first name -->
+          <mat-form-field>
+            <input style="color:#3f51b5" formControlName="firstname" matInput placeholder="First Name">
+            <mat-error>This field is mandatory.</mat-error>
+          </mat-form-field>
+          <!-- last name -->
+          <mat-form-field>
+            <input style="color:#3f51b5" formControlName="lastname" matInput placeholder="Last Name">
+            <mat-error>This field is mandatory.</mat-error>
+          </mat-form-field>
+          <!-- email -->
+          <mat-form-field>
+            <input style="color:#3f51b5" formControlName="email" matInput placeholder="Email">
+            <mat-error>Invalid email Address.</mat-error>
+          </mat-form-field>
+          <!-- mobileno -->
+          <mat-form-field>
+            <input  style="color:#3f51b5" formControlName="mobileNo" matInput placeholder="Mobileno">
+            <mat-error *ngIf="form.controls['mobileNo'].errors?.required">This field is mandatory.</mat-error>
+            <mat-error *ngIf="form.controls['mobileNo'].errors?.pattern">should be a 10 digit number</mat-error>
+          </mat-form-field>
+          <!-- DATE -->
+          <mat-form-field>
+            <input style="color:#3f51b5" formControlName="date" matInput [matDatepicker]="picker" placeholder="DOB">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <mat-error *ngIf="form.controls['date'].errors">should be a Date</mat-error>
+            <mat-error></mat-error>
+          </mat-form-field>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="controles-container">
+          <!-- address -->
+          <mat-form-field>
+            <input style="color:#3f51b5" formControlName="address" matInput placeholder="Address">
+            <mat-error *ngIf="form.controls['address'].errors?.required">This field is mandatory.</mat-error>
+          </mat-form-field>
+          <!-- city -->
+          <mat-form-field>
+            <input style="color:#3f51b5" formControlName="city" matInput placeholder="city">
+            <mat-error *ngIf="form.controls['city'].errors?.required">This field is mandatory.</mat-error>
+          </mat-form-field>
+          <!-- state -->
+          <mat-form-field>
+            <input style="color:#3f51b5" formControlName="state" matInput placeholder="state">
+            <mat-error *ngIf="form.controls['state'].errors?.required">This field is mandatory.</mat-error>
+            
+          </mat-form-field>
+          <!-- pin -->
+          <mat-form-field>
+            <input  style="color:#3f51b5" formControlName="pin" matInput placeholder="pin">
+            <mat-error *ngIf="form.controls['pin'].errors?.required">This field is mandatory.</mat-error>
+            <mat-error *ngIf="form.controls['pin'].errors?.pattern">should be a 6 digit number</mat-error>
+            
+          </mat-form-field>
+          <!-- country -->
+          <mat-form-field>
+            <input style="color:#3f51b5" formControlName="country" matInput placeholder="country">
+            <mat-error *ngIf="form.controls['country'].errors?.required">This field is mandatory.</mat-error>
+          </mat-form-field>
+          
+        </div>
+     
+    </mat-grid-tile>
+     
+    </mat-grid-list>
+    <mat-grid-list cols="3"rowHeight="8:1">
+        <div class="button-row">
+     
+      <mat-grid-tile> </mat-grid-tile>
+      <mat-grid-tile> </mat-grid-tile>
+      <mat-grid-tile>
+          <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Submit</button>
+          <button mat-raised-button color="warn" (click)="onClear()">Clear</button>
+        </mat-grid-tile>
+         </div>
+    </mat-grid-list>
+  </form>
+</div>

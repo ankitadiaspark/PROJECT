@@ -1,0 +1,22 @@
+  mat-paginator
+  {
+    background-color: #e8eaf6;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 35%;  
+  }
+  mat-header-cell {
+    color:#3f51b5;
+   }
+
+   .mat-raised-button{
+    float:right; 
+   }
+   mat-toolbar{
+     background-color: #3f51b5;
+   }
+   /* .mat-fab color{
+    float: right; 
+   } */

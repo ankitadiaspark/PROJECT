@@ -1,0 +1,8 @@
+.controles-container{
+    position: relative;
+    align-self: center;
+}
+
+.box{
+    background-color: #3f51b5;
+}
