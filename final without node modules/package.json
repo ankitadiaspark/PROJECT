@@ -27,7 +27,7 @@
     "node-cron": "^2.0.3",
     "nodemailer": "^6.3.0",
     "nodemon": "^1.19.2",
-    "otp-generator": "^1.1.0",
+    "otp-generator": "^3.0.0",
     "sha256": "^0.2.0",
     "simple-sha256": "^1.0.0",
     "swagger-express-middleware": "^2.0.3",
